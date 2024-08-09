@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
 
     
-    private PlayerControls controls;
+    public PlayerControls controls;
     private Animator animator;
 
     public float mouseSensitivity;
@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
 
     public Transform playerCamera;
 
+
+    public PlayerAttack playerAttack;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -33,7 +35,8 @@ public class PlayerController : MonoBehaviour
         controls.Player.Move.canceled += ctx => moveInput = Vector2.zero;
         controls.Player.Look.performed += ctx => lookInput = ctx.ReadValue<Vector2>();
         controls.Player.Look.canceled += ctx => lookInput = Vector2.zero;
-
+        //controls.Player.Attack.performed+=ctx => PerformAttack();
+        
 
     }
 
@@ -98,6 +101,10 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed", speed);
         animator.SetBool("IsJumping", !isGrounded);
     }
+    //private void PerformAttack()
+    //{
+    //    //lastAttackTime = Time.time;
+    //    animator.SetTrigger("attack");
+    //}
 
-   
 }
