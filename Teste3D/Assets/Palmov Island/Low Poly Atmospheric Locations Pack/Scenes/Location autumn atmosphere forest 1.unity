@@ -839,6 +839,7 @@ MonoBehaviour:
   mouseSensitivity: 25
   rotationSpeed: 1500
   playerCamera: {fileID: 2076388551}
+  playerAttack: {fileID: 1200752988}
 --- !u!143 &1200752985 stripped
 CharacterController:
   m_CorrespondingSourceObject: {fileID: 4416926081852918491, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
@@ -849,6 +850,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3893294197879345259, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
   m_PrefabInstance: {fileID: 1450033006}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1200752988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200752982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a0f08b568ba8e44b6abc2a1b10e48b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 0.5
+  playerController: {fileID: 1200752983}
 --- !u!1001 &1253554737
 PrefabInstance:
   m_ObjectHideFlags: 0

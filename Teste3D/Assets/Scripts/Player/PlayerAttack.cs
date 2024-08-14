@@ -26,13 +26,13 @@ public class PlayerAttack : MonoBehaviour
             return;
         }
         attackAction = playerInput.actions["Attack"];
-        //playerController.controls.Player.Attack.performed += ctx => PerformAttack();
+        playerController.controls.Player.Attack.performed += ctx => Attack();
         
     }
 
     private void Start()
     {
-        playerController.controls.Player.Attack.performed += ctx => Attack();
+        //playerController.controls.Player.Attack.performed += ctx => PerformAttack();
     }
 
 
@@ -51,7 +51,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void Attack()
     {
-        if (attackAction.triggered && Time.time >= lastAttackTime + attackCooldown)
+        if (Time.time >= lastAttackTime + attackCooldown)
         {
             Debug.Log("T");
             PerformAttack();
