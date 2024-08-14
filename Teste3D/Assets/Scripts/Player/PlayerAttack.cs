@@ -15,7 +15,7 @@ public class PlayerAttack : MonoBehaviour
     private PlayerControls playerControls;
 
     public PlayerController playerController;
-
+    public bool isAttacking;
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -38,22 +38,21 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(attackAction.triggered);
         
-        //Attack();
     }
 
     private void PerformAttack()
     {
         lastAttackTime = Time.time;
         anim.SetTrigger("attack");
+
     }
 
     public void Attack()
     {
         if (Time.time >= lastAttackTime + attackCooldown)
         {
-            Debug.Log("T");
+            isAttacking = true;
             PerformAttack();
         }
     }
