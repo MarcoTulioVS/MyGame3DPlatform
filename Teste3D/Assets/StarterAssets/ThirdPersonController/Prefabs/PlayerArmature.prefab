@@ -1005,6 +1005,8 @@ GameObject:
   - component: {fileID: 5885216827943657505}
   - component: {fileID: 135756642000475821}
   - component: {fileID: 4416926081852918493}
+  - component: {fileID: 7174200471871544543}
+  - component: {fileID: 5228201993976078547}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -1244,6 +1246,41 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &7174200471871544543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adba9a348b115b54f91a3cbabc9379af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterController: {fileID: 4416926081852918491}
+  speed: 5
+  gravity: -9.8
+  jumpHeight: 1.2
+  mouseSensitivity: 25
+  rotationSpeed: 1500
+  playerCamera: {fileID: 0}
+  playerAttack: {fileID: 0}
+--- !u!114 &5228201993976078547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a0f08b568ba8e44b6abc2a1b10e48b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 0.5
+  playerController: {fileID: 7174200471871544543}
+  isAttacking: 0
 --- !u!1 &4523139366846529165
 GameObject:
   m_ObjectHideFlags: 0
