@@ -1,0 +1,147 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WaterPropertyBlockSetter
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 7b610d095b4e1b044805a720533b3ce8, type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: waterRenderers.Array.size
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: waterRenderers.Array.data[0]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: waterRenderers.Array.data[1]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: waterRenderers.Array.data[2]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: waterRenderers.Array.data[3]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: waterRenderers.Array.data[4]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: waterRenderers.Array.data[5]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: waterRenderers.Array.data[6]
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: waterColor.r
+    value: 0.14705884
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: waterColor.g
+    value: 0.823
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: waterColor.b
+    value: 0.834
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: waterColor.a
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: waterTex
+    value: 
+    objectReference: {fileID: 2800000, guid: 92b12dd963505404f9025476f49cb3c9, type: 3}
+  - target: {fileID: 0}
+    propertyPath: waterTile.x
+    value: 0.12
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: waterTile.y
+    value: 0.12
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: textureVisibility
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: distortionTex
+    value: 
+    objectReference: {fileID: 2800000, guid: f6acd684980920849a180e1c541fb199, type: 3}
+  - target: {fileID: 0}
+    propertyPath: distortionTile.x
+    value: 0.06
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: distortionTile.y
+    value: 0.06
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: waterHeight
+    value: 0.99
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: waterDeep
+    value: 8.19
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: waterDepthParam
+    value: 0.0879
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: waterMinAlpha
+    value: 0.604
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: borderColor.r
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: borderColor.g
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: borderColor.b
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: borderColor.a
+    value: 0.622
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: borderWidth
+    value: 0.184
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: moveDirection.x
+    value: 0.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: moveDirection.y
+    value: 0.4
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []
