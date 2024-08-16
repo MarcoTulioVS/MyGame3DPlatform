@@ -27,6 +27,7 @@ public class PlayerAttack : MonoBehaviour
             return;
         }
         attackAction = playerInput.actions["Attack"];
+
         playerController.controls.Player.Attack.performed += ctx => Attack("attack",true);
         playerController.controls.Player.SecondAttack.performed += ctx => Attack("secondAttack",secondAttack);
     }
@@ -34,6 +35,7 @@ public class PlayerAttack : MonoBehaviour
     private void Start()
     {
         //playerController.controls.Player.Attack.performed += ctx => PerformAttack();
+        
     }
 
 
