@@ -11,4 +11,12 @@ public class ItemCollectable : MonoBehaviour
             Debug.Log("Player");
         }
     }
+
+    public virtual void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Player");
+        }
+    }
 }
