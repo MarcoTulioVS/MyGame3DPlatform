@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
-    
+
     public float attackCooldown = 0.5f;
     private float lastAttackTime = -Mathf.Infinity;
     private Animator anim;
@@ -16,6 +16,7 @@ public class PlayerAttack : MonoBehaviour
 
     public PlayerController playerController;
     public bool isAttacking;
+    private bool secondAttack;
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -26,8 +27,8 @@ public class PlayerAttack : MonoBehaviour
             return;
         }
         attackAction = playerInput.actions["Attack"];
-        playerController.controls.Player.Attack.performed += ctx => Attack();
-        
+        playerController.controls.Player.Attack.performed += ctx => Attack("attack",true);
+        playerController.controls.Player.SecondAttack.performed += ctx => Attack("secondAttack",secondAttack);
     }
 
     private void Start()
@@ -41,19 +42,18 @@ public class PlayerAttack : MonoBehaviour
         
     }
 
-    private void PerformAttack()
+    public void Attack(string name, bool isActive)
     {
-        lastAttackTime = Time.time;
-        anim.SetTrigger("attack");
-
-    }
-
-    public void Attack()
-    {
-        if (Time.time >= lastAttackTime + attackCooldown)
+        
+        if (Time.time >= lastAttackTime + attackCooldown && isActive)
         {
             isAttacking = true;
-            PerformAttack();
+            lastAttackTime = Time.time;
+            anim.SetTrigger(name);
+            
         }
     }
+
+    public bool SecondAttack { get { return this.secondAttack; } set { this.secondAttack = value; } }
+
 }

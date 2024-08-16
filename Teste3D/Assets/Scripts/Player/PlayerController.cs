@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
 
 
     public PlayerAttack playerAttack;
+    
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -35,9 +36,8 @@ public class PlayerController : MonoBehaviour
         controls.Player.Move.canceled += ctx => moveInput = Vector2.zero;
         controls.Player.Look.performed += ctx => lookInput = ctx.ReadValue<Vector2>();
         controls.Player.Look.canceled += ctx => lookInput = Vector2.zero;
-        //controls.Player.Attack.performed+=ctx => PerformAttack();
-        
-
+        controls.Player.Block.performed += ctx => Block(true);
+        controls.Player.Block.canceled += ctx => Block(false);
     }
 
     private void OnEnable()
@@ -101,10 +101,11 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed", speed);
         animator.SetBool("IsJumping", !isGrounded);
     }
-    //private void PerformAttack()
-    //{
-    //    //lastAttackTime = Time.time;
-    //    animator.SetTrigger("attack");
-    //}
+
+    public void Block(bool value)
+    {
+        animator.SetBool("block", value);
+        //Incrementar mais codigos para fazer com que o personagem não tome dano
+    }
 
 }

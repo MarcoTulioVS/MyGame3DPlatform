@@ -15,6 +15,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Block",
+                    "type": "Button",
+                    "id": "422d8e96-5b14-46ef-a49d-9f937d17af59",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Move",
                     "type": "Value",
                     "id": "25fb7c91-dc7c-45c4-b23c-d9727c364120",
@@ -36,6 +45,15 @@
                     "name": "Attack",
                     "type": "Button",
                     "id": "2f98fe7b-5641-4271-a7e2-df5c1a5070fb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Second Attack",
+                    "type": "Button",
+                    "id": "3b04896b-c4e5-487d-9e9f-f41c5f3b34ed",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -128,6 +146,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7aab5d60-3028-442c-9668-1e1569d39fdc",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Second Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "44b8deae-2020-43f8-a9b2-4a1cd466518e",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Block",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
