@@ -1007,6 +1007,8 @@ GameObject:
   - component: {fileID: 4416926081852918493}
   - component: {fileID: 7174200471871544543}
   - component: {fileID: 5228201993976078547}
+  - component: {fileID: 8621525635275757067}
+  - component: {fileID: 243325507032257323}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -1266,6 +1268,7 @@ MonoBehaviour:
   rotationSpeed: 1500
   playerCamera: {fileID: 0}
   playerAttack: {fileID: 0}
+  crossObject: 0
 --- !u!114 &5228201993976078547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1281,6 +1284,33 @@ MonoBehaviour:
   attackCooldown: 0.5
   playerController: {fileID: 7174200471871544543}
   isAttacking: 0
+--- !u!114 &8621525635275757067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dc7f9add390d9948a82d94e57e3e4f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorKeys: 
+--- !u!136 &243325507032257323
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.84
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!1 &4523139366846529165
 GameObject:
   m_ObjectHideFlags: 0
