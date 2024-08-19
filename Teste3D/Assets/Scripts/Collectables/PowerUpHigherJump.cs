@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PowerUpHigherJump : ItemCollectable
 {
+    [SerializeField]
     private float increaseHight = 2f;
+    [SerializeField]
     private float timePowerUp = 5f;
     public override void OnTriggerEnter(Collider col)
     {

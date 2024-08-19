@@ -26,7 +26,8 @@ public class PlayerController : MonoBehaviour
 
 
     public PlayerAttack playerAttack;
-    
+
+    public bool crossObject;
     private void Awake()
     {
         animator = GetComponent<Animator>();
