@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, 5, 15);
 
-        playerCamera.localRotation = Quaternion.Euler(xRotation, 0, 0);
+        //playerCamera.localRotation = Quaternion.Euler(xRotation, 0, 0);
 
         transform.Rotate(Vector3.up * mouseX);
         UpdateAnimator(moveDirection);
@@ -94,6 +94,7 @@ public class PlayerController : MonoBehaviour
         if (isGrounded)
         {
             ySpeed = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            transform.parent = null;//Para que o player possa sair de dentro da plataforma forçado
         }
     }
 

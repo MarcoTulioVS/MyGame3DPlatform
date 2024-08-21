@@ -10,6 +10,7 @@ public class PlatformMovement : MonoBehaviour
     [SerializeField]
     private bool GoAhead = true;
 
+    
     private void Start()
     {
         StartCoroutine("TimeGoBack");
