@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
     {
         // Verifica se o personagem está no chão
         isGrounded = characterController.isGrounded;
+        
 
         // Movimento horizontal
         Vector3 moveDirection = new Vector3(moveInput.x, 0, moveInput.y);
