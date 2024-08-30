@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public CharacterController characterController;
     public float speed = 5f;
+    [SerializeField]
+    private float currentSpeed;
     public float gravity = -9.8f;
     public float jumpHeight = 2f;
 
@@ -32,6 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         controls = new PlayerControls();
+        currentSpeed = speed;
         controls.Player.Jump.performed += ctx => Jump();
         controls.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
         controls.Player.Move.canceled += ctx => moveInput = Vector2.zero;
@@ -55,17 +58,20 @@ public class PlayerController : MonoBehaviour
     {
         // Verifica se o personagem está no chão
         isGrounded = characterController.isGrounded;
-        
 
         // Movimento horizontal
         Vector3 moveDirection = new Vector3(moveInput.x, 0, moveInput.y);
-        moveDirection = transform.TransformDirection(moveDirection) * speed;
+        moveDirection = transform.TransformDirection(moveDirection) * currentSpeed;
 
         // Aplicar gravidade e pulo
         if (isGrounded)
         {
             if (ySpeed < 0)
+            {
                 ySpeed = -2f; // Pequeno valor para manter o personagem no chão
+                
+            }
+
         }
         else
         {
@@ -76,7 +82,7 @@ public class PlayerController : MonoBehaviour
 
         // Mover o personagem
         characterController.Move(moveDirection * Time.deltaTime);
-
+        
         float mouseX = lookInput.x * mouseSensitivity * Time.deltaTime;
         float mouseY = lookInput.y * mouseSensitivity * Time.deltaTime;
 
@@ -87,6 +93,7 @@ public class PlayerController : MonoBehaviour
 
         transform.Rotate(Vector3.up * mouseX);
         UpdateAnimator(moveDirection);
+       
     }
 
     private void Jump()
@@ -110,5 +117,5 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("block", value);
         //Incrementar mais codigos para fazer com que o personagem não tome dano
     }
-
+    
 }
