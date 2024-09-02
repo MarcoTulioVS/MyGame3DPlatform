@@ -9,7 +9,9 @@ public class Skeleton : MonoBehaviour,IEnemy
     private NavMeshAgent agent;
 
     public Transform target;
-    private void Start()
+
+    private float detectionRange = 3f;
+    private void Awake()
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
@@ -22,9 +24,23 @@ public class Skeleton : MonoBehaviour,IEnemy
 
     public void Move()
     {
+        
         if (target != null)
         {
-            agent.SetDestination(target.position);
+            float distance = Vector3.Distance(transform.position, target.position);
+            
+            
+            if (distance<=detectionRange)
+            {
+                animator.SetBool("walk", true);
+                agent.SetDestination(target.position);
+            }
+            else
+            {
+                animator.SetBool("walk", false);
+                agent.isStopped = false;
+            }
+
         }
     }
 
