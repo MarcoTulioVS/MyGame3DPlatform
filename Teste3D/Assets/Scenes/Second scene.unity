@@ -178,6 +178,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TT_RTS_Demo_Character
       objectReference: {fileID: 0}
+    - target: {fileID: 3875133624328004113, guid: 94a1c4ae4d182994989d001660e34fd2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3875133624328036529, guid: 94a1c4ae4d182994989d001660e34fd2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3875133624335340365, guid: 94a1c4ae4d182994989d001660e34fd2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 94a1c4ae4d182994989d001660e34fd2, type: 3}
