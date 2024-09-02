@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb9c6bdd914eb4648acaa9e346dd8f27, type: 3}
   m_Name: Skeleton
   m_EditorClassIdentifier: 
-  force: 0
-  speed: 0
-  life: 0
+  force: 1
+  speed: 2
+  life: 1
