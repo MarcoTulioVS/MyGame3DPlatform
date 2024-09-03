@@ -3823,6 +3823,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 112
       objectReference: {fileID: 0}
+    - target: {fileID: 1585365525472974969, guid: b660ea5883d7e0d47803b62bd05e78af, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5087815864397091200, guid: b660ea5883d7e0d47803b62bd05e78af, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0

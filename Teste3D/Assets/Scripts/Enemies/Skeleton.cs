@@ -32,13 +32,15 @@ public class Skeleton : MonoBehaviour,IEnemy
             
             if (distance<=detectionRange)
             {
+                agent.isStopped = false;
                 animator.SetBool("walk", true);
                 agent.SetDestination(target.position);
             }
             else
             {
+                agent.isStopped = true;
                 animator.SetBool("walk", false);
-                agent.isStopped = false;
+
             }
 
         }
