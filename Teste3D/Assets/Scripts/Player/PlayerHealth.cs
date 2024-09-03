@@ -8,12 +8,38 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     private float health;
     public float CurrentHealth { get; set; }
 
+    private bool doDamage;
     private void Start()
     {
         CurrentHealth = health;
+        
     }
     public void Damage(float value)
     {
-        CurrentHealth -= value;
+        if (CurrentHealth > 0)
+        {
+            if (!doDamage)
+            {
+                doDamage = true;
+                CurrentHealth -= value;
+                StartCoroutine("CoolDownDamage");
+            }
+            
+        }
+
+        if (CurrentHealth <= 0)
+        {
+            CurrentHealth = 0;
+        }
+        
+    }
+    
+
+    IEnumerator CoolDownDamage()
+    {
+        yield return new WaitForSeconds(1);
+        doDamage = false;
+        StopCoroutine(CoolDownDamage());
+        
     }
 }

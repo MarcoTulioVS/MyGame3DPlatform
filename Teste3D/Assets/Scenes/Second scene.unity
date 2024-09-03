@@ -234,7 +234,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
   m_PrefabInstance: {fileID: 1450033006}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &64708367
+--- !u!114 &64708373
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1533,7 +1533,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6988179991521772218, guid: b660ea5883d7e0d47803b62bd05e78af, type: 3}
   m_PrefabInstance: {fileID: 1165190610070500150}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &943675929
+--- !u!65 &943675930
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943675928}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.22787899, y: 0.08938336, z: 0.89}
+  m_Center: {x: 0.00000050652443, y: -0.00000023718918, z: 0.45}
+--- !u!114 &943675932
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1546,19 +1559,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
---- !u!65 &943675930
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943675928}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.22787899, y: 0.08938336, z: 0.89}
-  m_Center: {x: 0.00000050652443, y: -0.00000023718918, z: 0.45}
 --- !u!1 &959566291
 GameObject:
   m_ObjectHideFlags: 0
@@ -3888,6 +3888,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1200752987}
+    - target: {fileID: 5939863803557555409, guid: b660ea5883d7e0d47803b62bd05e78af, type: 3}
+      propertyPath: attackCollider
+      value: 
+      objectReference: {fileID: 943675930}
     - target: {fileID: 7074191582991745919, guid: b660ea5883d7e0d47803b62bd05e78af, type: 3}
       propertyPath: m_IsTrigger
       value: 0

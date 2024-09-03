@@ -6,10 +6,11 @@ public class SwordSkeleton : MonoBehaviour
 {
     [SerializeField]
     private float damage;
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Player")
         {
+            
             collision.gameObject.GetComponent<PlayerHealth>().Damage(damage);
         }
     }

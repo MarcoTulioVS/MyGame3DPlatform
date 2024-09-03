@@ -11,6 +11,7 @@ public class Skeleton : MonoBehaviour,IEnemy
     public Transform target;
 
     private float detectionRange = 3f;
+    private float distance;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -19,7 +20,12 @@ public class Skeleton : MonoBehaviour,IEnemy
 
     public void Attack()
     {
-
+        if(distance<(detectionRange - 1))
+        {
+            animator.SetTrigger("attack");
+            animator.SetBool("walk", false);
+            
+        }
     }
 
     public void Move()
@@ -27,7 +33,7 @@ public class Skeleton : MonoBehaviour,IEnemy
         
         if (target != null)
         {
-            float distance = Vector3.Distance(transform.position, target.position);
+            distance = Vector3.Distance(transform.position, target.position);
             
             
             if (distance<=detectionRange)
@@ -42,12 +48,14 @@ public class Skeleton : MonoBehaviour,IEnemy
                 animator.SetBool("walk", false);
 
             }
-
         }
     }
 
     private void Update()
     {
         Move();
+        Attack();
     }
+
+    
 }
