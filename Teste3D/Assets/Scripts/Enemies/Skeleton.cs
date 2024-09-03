@@ -12,6 +12,7 @@ public class Skeleton : MonoBehaviour,IEnemy
 
     private float detectionRange = 3f;
     private float distance;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -22,6 +23,7 @@ public class Skeleton : MonoBehaviour,IEnemy
     {
         if(distance<(detectionRange - 1))
         {
+            animator.speed = 2.2f;
             animator.SetTrigger("attack");
             animator.SetBool("walk", false);
             
@@ -38,12 +40,14 @@ public class Skeleton : MonoBehaviour,IEnemy
             
             if (distance<=detectionRange)
             {
+                animator.speed = 1;
                 agent.isStopped = false;
                 animator.SetBool("walk", true);
                 agent.SetDestination(target.position);
             }
             else
             {
+                animator.speed = 2.2f;
                 agent.isStopped = true;
                 animator.SetBool("walk", false);
 
@@ -57,5 +61,11 @@ public class Skeleton : MonoBehaviour,IEnemy
         Attack();
     }
 
-    
+    IEnumerator BoostAttackSpeed()
+    {
+        animator.speed = 2.2f;
+        yield return new WaitForSeconds(1.5f);
+        animator.speed = 1f;
+        StopCoroutine("BoostAttackSpeed");
+    }
 }
