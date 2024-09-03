@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordSkeleton : EnemyWeapon
+public class GoblinClub : EnemyWeapon
 {
     public Enemy enemy;
     public override void OnTriggerEnter(Collider collision)

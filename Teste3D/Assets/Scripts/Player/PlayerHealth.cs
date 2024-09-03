@@ -33,7 +33,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         }
         
     }
-    
 
     IEnumerator CoolDownDamage()
     {
