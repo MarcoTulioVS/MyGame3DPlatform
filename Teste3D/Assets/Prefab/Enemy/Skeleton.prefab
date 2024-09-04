@@ -246,6 +246,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 11400000, guid: fe35c45963e08614089398dfbc00fe81, type: 2}
   target: {fileID: 0}
+  attackTrigger: attack
+  boolWalk: walk
 --- !u!54 &1585365525472974969
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1563,3 +1565,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
+  enemy: {fileID: 0}

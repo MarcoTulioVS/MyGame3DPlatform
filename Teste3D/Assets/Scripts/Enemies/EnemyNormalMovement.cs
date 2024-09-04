@@ -13,6 +13,12 @@ public class EnemyNormalMovement : MonoBehaviour
     private float detectionRange = 3f;
     private float distance;
 
+    [SerializeField]
+    private string attackTrigger;
+
+    [SerializeField]
+    private string boolWalk;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -24,8 +30,8 @@ public class EnemyNormalMovement : MonoBehaviour
         if (distance < (detectionRange - 1))
         {
             animator.speed = 2.2f;
-            animator.SetTrigger("attack");
-            animator.SetBool("walk", false);
+            animator.SetTrigger(attackTrigger);
+            animator.SetBool(boolWalk, false);
 
         }
     }
@@ -42,14 +48,14 @@ public class EnemyNormalMovement : MonoBehaviour
             {
                 animator.speed = 1;
                 agent.isStopped = false;
-                animator.SetBool("walk", true);
+                animator.SetBool(boolWalk, true);
                 agent.SetDestination(target.position);
             }
             else
             {
                 animator.speed = 2.2f;
                 agent.isStopped = true;
-                animator.SetBool("walk", false);
+                animator.SetBool(boolWalk, false);
 
             }
         }

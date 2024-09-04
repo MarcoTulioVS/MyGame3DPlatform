@@ -404,6 +404,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 11400000, guid: 58d62a2eaac9f5946a55483ff7e76879, type: 2}
   target: {fileID: 0}
+  attackTrigger: attack
+  boolWalk: walk
 --- !u!1 &4522857360274714516
 GameObject:
   m_ObjectHideFlags: 0
