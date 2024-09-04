@@ -5,38 +5,44 @@ using UnityEngine.AI;
 public class EnemyNormalMovement : MonoBehaviour
 {
     public Enemy enemy;
-    private Animator animator;
+    protected Animator animator;
     private NavMeshAgent agent;
 
     public Transform target;
 
-    private float detectionRange = 3f;
-    private float distance;
+    protected float detectionRange = 3f;
+    protected float distance;
 
     [SerializeField]
-    private string attackTrigger;
+    protected string attackTrigger;
 
     [SerializeField]
-    private string boolWalk;
+    protected string boolWalk;
 
+    [SerializeField]
+    public float boostAnimationSpeed;
+
+    protected bool isAttacking;
     private void Awake()
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
     }
 
-    public void Attack()
+    public virtual void Attack()
     {
         if (distance < (detectionRange - 1))
         {
+            isAttacking = true;
             animator.speed = 2.2f;
             animator.SetTrigger(attackTrigger);
             animator.SetBool(boolWalk, false);
+            StartCoroutine("TimeAttack");
 
         }
     }
 
-    public void Move()
+    public virtual void Move()
     {
 
         if (target != null)
@@ -44,7 +50,7 @@ public class EnemyNormalMovement : MonoBehaviour
             distance = Vector3.Distance(transform.position, target.position);
 
 
-            if (distance <= detectionRange)
+            if (distance <= detectionRange && !isAttacking)
             {
                 animator.speed = 1;
                 agent.isStopped = false;
@@ -53,7 +59,7 @@ public class EnemyNormalMovement : MonoBehaviour
             }
             else
             {
-                animator.speed = 2.2f;
+                animator.speed = boostAnimationSpeed;
                 agent.isStopped = true;
                 animator.SetBool(boolWalk, false);
 
@@ -67,11 +73,11 @@ public class EnemyNormalMovement : MonoBehaviour
         Attack();
     }
 
-    IEnumerator BoostAttackSpeed()
+    protected IEnumerator TimeAttack()
     {
-        animator.speed = 2.2f;
+        
         yield return new WaitForSeconds(1.5f);
-        animator.speed = 1f;
-        StopCoroutine("BoostAttackSpeed");
+        isAttacking = false;
+        //StopCoroutine("BoostAttackSpeed");
     }
 }
