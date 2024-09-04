@@ -5,6 +5,11 @@ using UnityEngine;
 public class Cactus : EnemyNormalMovement
 {
     private bool blockRandom;
+    public BoxCollider attack;
+    public BoxCollider secondAttack;
+
+
+
     public override void Attack()
     {
         if (distance < (detectionRange - 1))
@@ -33,18 +38,22 @@ public class Cactus : EnemyNormalMovement
 
             if (random == 1)
             {
-
                 attackTrigger = "attack";
+                attack.enabled = true;
             }
             else if(random == 2)
             {
 
                 attackTrigger = "secondAttack";
+                secondAttack.enabled = true;
             }
 
             yield return new WaitForSeconds(3);
             blockRandom = false;
+            attack.enabled = false;
+            secondAttack.enabled = false;
         }
         
     }
+
 }
