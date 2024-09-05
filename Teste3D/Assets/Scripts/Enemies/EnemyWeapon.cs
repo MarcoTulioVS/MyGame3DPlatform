@@ -14,4 +14,20 @@ public class EnemyWeapon : MonoBehaviour
             collision.gameObject.GetComponent<PlayerHealth>().Damage(damage);
         }
     }
+
+    public virtual void OnTriggerStay(Collider collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            //Code
+        }
+    }
+
+    public virtual void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            //Code
+        }
+    }
 }
