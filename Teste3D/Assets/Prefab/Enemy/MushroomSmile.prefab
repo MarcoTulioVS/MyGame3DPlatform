@@ -69,6 +69,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7584167224629974293}
+  - component: {fileID: 1689691938714403397}
+  - component: {fileID: 3983863841387533714}
+  - component: {fileID: 9162051283926906745}
   m_Layer: 0
   m_Name: mushroom_root
   m_TagString: Untagged
@@ -91,6 +94,52 @@ Transform:
   m_Father: {fileID: 4417926828353203845}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1689691938714403397
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123370458626531948}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &3983863841387533714
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123370458626531948}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.87, y: 1.39, z: 1}
+  m_Center: {x: -0.53, y: 0.03, z: 0}
+--- !u!114 &9162051283926906745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123370458626531948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 944512cf69905a84ab42a04255a9d213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceForce: 300
+  smoothTime: 0.1
+  isAttacking: 0
+  enemy: {fileID: 11400000, guid: 3aa19580aa830864981a650772aeec60, type: 2}
+  maxBounceVelocity: 3
 --- !u!1 &2805274581144880606
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,9 +215,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4417926828353203845}
   - component: {fileID: 4234817921482536587}
-  - component: {fileID: 3295940493337352731}
-  - component: {fileID: 3295940493337352730}
-  - component: {fileID: 3295940493337352728}
   m_Layer: 0
   m_Name: MushroomSmile
   m_TagString: bounce
@@ -211,51 +257,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!54 &3295940493337352731
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3892360942529901631}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &3295940493337352730
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3892360942529901631}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.99, y: 0.65, z: 1.03}
-  m_Center: {x: 0.03, y: 0.51, z: 0}
---- !u!114 &3295940493337352728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3892360942529901631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 944512cf69905a84ab42a04255a9d213, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounceForce: 300
-  smoothTime: 0.5
-  isAttacking: 0
-  enemy: {fileID: 11400000, guid: 3aa19580aa830864981a650772aeec60, type: 2}
 --- !u!1 &4316653008728677455
 GameObject:
   m_ObjectHideFlags: 0

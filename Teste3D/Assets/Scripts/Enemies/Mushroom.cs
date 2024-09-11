@@ -8,6 +8,12 @@ public class Mushroom : MonoBehaviour
     public float smoothTime = 0.1f;
     public bool isAttacking;
     public Enemy enemy;
+
+    private Vector3 bounceVelocity = Vector3.zero;
+
+    public float maxBounceVelocity = 20f;
+
+    private bool activeJump;
     private void OnTriggerEnter(Collider collision)
     {
         CharacterController characterController = collision.gameObject.GetComponent<CharacterController>();
@@ -16,22 +22,31 @@ public class Mushroom : MonoBehaviour
         {
             if (characterController.velocity.y < 0)
             {
-                Vector3 targetbounce = new Vector3(0, bounceForce, 0);
-                characterController.Move(targetbounce * Time.deltaTime);
+                
+                if (!activeJump)
+                {
+                    StartCoroutine(CoolDownJump());
+                    Vector3 targetBounce = new Vector3(0, bounceForce, 0);
+                    characterController.Move(targetBounce * Time.deltaTime);
+                }
 
             }
         }
-        
-    }
 
-    private void OnCollisionEnter(Collision collision)
-    {
         if (collision.gameObject.tag == "Player" && isAttacking)
         {
             collision.gameObject.GetComponent<PlayerHealth>().Damage(enemy.force);
-            Debug.Log(collision.gameObject.GetComponent<PlayerHealth>().CurrentHealth);
 
         }
+
+    }
+
+    IEnumerator CoolDownJump()
+    {
+        activeJump = true;
+        yield return new WaitForSeconds(1f);
+        activeJump = false;
+        
     }
 
 }
