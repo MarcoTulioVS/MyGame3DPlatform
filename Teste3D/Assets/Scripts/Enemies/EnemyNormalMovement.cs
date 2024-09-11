@@ -5,7 +5,10 @@ using UnityEngine.AI;
 public class EnemyNormalMovement : MonoBehaviour
 {
     public Enemy enemy;
+
+    [SerializeField]
     protected Animator animator;
+    [SerializeField]
     private NavMeshAgent agent;
 
     public Transform target;
@@ -25,8 +28,8 @@ public class EnemyNormalMovement : MonoBehaviour
     protected bool isAttacking;
     private void Awake()
     {
-        animator = GetComponent<Animator>();
-        agent = GetComponent<NavMeshAgent>();
+        //animator = GetComponent<Animator>();
+        //agent = GetComponent<NavMeshAgent>();
     }
 
     public virtual void Attack()
