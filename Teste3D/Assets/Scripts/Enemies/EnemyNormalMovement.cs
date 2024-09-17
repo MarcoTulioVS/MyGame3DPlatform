@@ -13,6 +13,7 @@ public class EnemyNormalMovement : MonoBehaviour
 
     public Transform target;
 
+    [SerializeField]
     protected float detectionRange = 3f;
     protected float distance;
 
@@ -26,7 +27,7 @@ public class EnemyNormalMovement : MonoBehaviour
     public float boostAnimationSpeed;
 
     protected bool isAttacking;
-    private void Awake()
+    protected virtual void Awake()
     {
         //animator = GetComponent<Animator>();
         //agent = GetComponent<NavMeshAgent>();
@@ -51,7 +52,7 @@ public class EnemyNormalMovement : MonoBehaviour
         if (target != null)
         {
             distance = Vector3.Distance(transform.position, target.position);
-
+            
 
             if (distance <= detectionRange && !isAttacking)
             {
@@ -60,7 +61,7 @@ public class EnemyNormalMovement : MonoBehaviour
                 animator.SetBool(boolWalk, true);
                 agent.SetDestination(target.position);
             }
-            else
+            else if(distance > detectionRange)
             {
                 animator.speed = boostAnimationSpeed;
                 agent.isStopped = true;
@@ -70,7 +71,7 @@ public class EnemyNormalMovement : MonoBehaviour
         }
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         Move();
         Attack();
