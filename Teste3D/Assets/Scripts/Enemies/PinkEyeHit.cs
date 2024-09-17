@@ -10,6 +10,7 @@ public class PinkEyeHit : EnemyWeapon
         if (collision.gameObject.tag == "Player")
         {
             pinkEye.Attack(true);
+            pinkEye.lookAtTarget = true;
         }
         
     }
@@ -19,6 +20,7 @@ public class PinkEyeHit : EnemyWeapon
         if (collision.gameObject.tag == "Player")
         {
             pinkEye.Attack(false);
+            pinkEye.lookAtTarget = false;
         }
     }
 }
