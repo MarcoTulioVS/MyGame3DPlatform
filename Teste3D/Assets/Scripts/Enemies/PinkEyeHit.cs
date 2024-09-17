@@ -4,23 +4,12 @@ using UnityEngine;
 
 public class PinkEyeHit : EnemyWeapon
 {
-    public PinkEye pinkEye;
+    public Enemy enemy;
     public override void OnTriggerStay(Collider collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            pinkEye.Attack(true);
-            pinkEye.lookAtTarget = true;
-        }
-        
-    }
-
-    public override void OnTriggerExit(Collider collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            pinkEye.Attack(false);
-            pinkEye.lookAtTarget = false;
+            collision.GetComponent<PlayerHealth>().Damage(enemy.force);
         }
     }
 }

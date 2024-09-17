@@ -10,11 +10,13 @@ public class PinkEye : MonoBehaviour
 
     public Transform target;
 
-    [SerializeField]
-    private float speedRotation;
-
     public bool lookAtTarget;
 
+    public float speedRotation;
+
+    public GameObject laser;
+
+   
     public void Attack(bool value)
     {
         animator.SetBool("attack",value);
@@ -33,10 +35,17 @@ public class PinkEye : MonoBehaviour
         if (lookAtTarget)
         {
             LookAtTarget();
+            ExecuteAttack(true);
         }
         else
         {
             transform.rotation = Quaternion.identity;
+            ExecuteAttack(false);
         }
+    }
+
+    public void ExecuteAttack(bool value)
+    {
+        laser.SetActive(value);
     }
 }
