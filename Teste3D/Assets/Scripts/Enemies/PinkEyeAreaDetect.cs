@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PinkEyeAreaDetect
+public class PinkEyeAreaDetect:MonoBehaviour
 {
     public PinkEye pinkEye;
     public void OnTriggerStay(Collider collision)
